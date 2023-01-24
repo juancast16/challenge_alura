@@ -1,0 +1,362 @@
+/*@import url(style.css);*/
+
+body{
+	background-color: #f3f5fc;
+}
+
+#Logo {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 40px;
+
+position: absolute;
+width: 120px;
+height: 48px;
+left: -30px;
+top: 20px;
+}
+
+label{
+  position: absolute;
+  width: 577px;
+  height: 48px;
+  left: 250px;
+  top: 145px;
+  font-size: 20px;
+  font-weight: bold;
+  }
+
+input{
+position: absolute;
+width: 577px;
+height: 48px;
+left: 240px;
+top: 168px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 150%;
+color: darkolivegreen;
+
+border-radius:20px;
+
+}
+
+input.outlinenone {
+   outline: none;
+   background-color: #dfe;
+   border: 0;
+ }
+
+h2{
+position: absolute;
+width: 577px;
+height: 48px;
+left: 240px;
+top: 50px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 150%;
+color: #da8a40;
+-webkit-text-stroke: 0.7px black;
+
+}
+
+#boton1{
+font-size: 20px;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 20px;
+
+position: absolute;
+width: 280px;
+height: 67px;
+left: 240px;
+top: 400px;
+
+background:transparent;
+color: #000000;
+padding: 10px;
+
+border-radius:35px;
+padding-top:20px;
+padding-bottom:15px;
+padding-left:100px;
+padding-right:40px;
+
+}
+
+#boton1:hover {
+cursor: pointer;
+background-color:#0a3871;
+}
+
+#boton2{
+font-size: 20px;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+position: absolute;
+width: 280px;
+height: 67px;
+left: 540px;
+top: 400px;
+
+background:transparent;
+color: #000000;
+padding: 10px;
+
+border-radius:35px;
+padding-top:20px;
+padding-bottom:15px;
+padding-left: 85px;
+padding-right:40px;
+
+}
+
+#boton2:hover {
+cursor: pointer;
+background-color:#0a3871;
+
+}
+
+img.mediana{
+position: absolute;
+width: 400px;
+height: 550px;
+left: 900px;
+top: 40px;
+/* White */
+
+background: #FFFFFF;
+/* shadow */
+
+box-shadow: 0px 20px 32px -8px rgba(0, 0, 0, 0.08);
+border-radius: 32px;
+}
+
+img.muñeco{
+position: absolute;
+width: 336px;
+height: 304px;
+left: 930px;
+top: 60px;
+}
+
+p{
+  z-index: 1;
+  position: absolute;
+  width: 320px;
+  height: 100px;
+  left: 930px;
+  top: 360px;
+  font-size: 24px;
+  font-weight: bold; 
+  color: rgb(52,58,64);
+}
+
+img.mensaje{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+position: absolute;
+width: 336px;
+height: 122px;
+left: 930px;
+top: 400px;
+
+}
+
+#boton3{
+z-index: 1;
+position: absolute;
+left: 900px;
+top: 560px;
+border-radius:20px;
+padding-top:10px;
+padding-bottom:10px;
+padding-left: 30px;
+padding-right:30px;
+}
+
+#boton3:hover {
+  cursor: pointer;
+  background-color:#0a3871;
+  
+  }
+
+
+footer{
+  text-align: left;
+  padding: auto;
+  position: absolute;
+  left: -920px;
+  top: 220px;
+  
+  
+}
+
+footer p{
+  font-size: 16px;
+  
+}
+
+
+@media screen and (max-width:480px){
+  label{
+    width: 360px;
+    height: 48px;
+    left: 10px;
+    top: 145px; 
+  }
+  h2{
+    width: 577px;
+    height: 48px;
+    left: 10px;
+    top: 80px;
+  }
+
+  input{
+      width: 290px;
+      height: 48px;
+      left: 10px;
+      top: 200px;
+  }
+
+  #boton1{
+    width: 280px;
+    height: 67px;
+    left: 20px;
+    top: 320px;
+  }
+
+  #boton2{
+    width: 280px;
+    height: 67px;
+    left: 20px;
+    top: 400px;
+  }
+
+  #copy{
+   
+    left: 200px;
+    top: 1050px;  
+}
+
+img.mediana{
+  
+  width: 300px;
+  height: 550px;
+  left: 10px;
+  top: 480px;
+  }
+
+  img.muñeco{
+   display: none;
+    }
+
+    p{
+      width: 300px;
+      height: 100px;
+      left: 12px;
+      top: 500px;
+    }
+
+    img.mensaje{
+      display: none;
+    }
+
+  #boton3{
+    left: 10px;
+    top: 1050px;
+  }
+
+}
+
+@media screen and (max-width:768px){
+  label{
+    width: 400px;
+    height: 48px;
+    left: 10px;
+    top: 145px; 
+    margin: auto;
+  }
+  h2{
+    width: 577px;
+    height: 48px;
+    left: 300px;
+    top: 80px;
+    margin: auto;
+  }
+
+  input{
+      width: 600px;
+      height: 48px;
+      left: 10px;
+      top: 200px;
+      margin: auto;
+  }
+
+  #boton1{
+    width: 280px;
+    height: 67px;
+    left: 20px;
+    top: 320px;
+    margin: auto;
+  }
+
+  #boton2{
+    width: 280px;
+    height: 67px;
+    left: 350px;
+    top: 320px;
+    margin: auto;
+  }
+
+
+
+img.mediana{
+  
+  width: 600px;
+  height: 300px;
+  left: 10px;
+  top: 480px;
+  margin: auto;
+  }
+
+  img.muñeco{
+   display: none;
+    }
+
+    p{
+      width: 300px;
+      height: 100px;
+      left: 12px;
+      top: 500px;
+    }
+
+    img.mensaje{
+      display: none;
+    }
+
+  #boton3{
+    left: 10px;
+    top: 850px;
+    margin: auto;
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador De Palabras</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="Logo">
+    <img src="img/Logo.png">
+    </header>
+<main>
+    <section id="formulario">
+        <form action="">
+
+            <h2>ENCRIPTADOR</h2>
+            <label for="texto">Ingresa el texto a encriptar o desencriptar:</label>
+            <input type="text" id="texto1" placeholder="Ingrese El Texto Aqui" >
+            
+            
+        </form>
+
+        <p>Texto encriptado: <span id="result"></span></p>
+        
+    </section>
+
+    <section id="botones">
+        <button type="button" onclick="encriptar()" id="boton1">Encriptar</button>
+        <button type="button" onclick="desencriptar()" id="boton2">Desencriptar</button>
+        <button type="button" onclick="copiar()" id="boton3">copiar</button>
+ 
+    </section>
+
+    <section id="rectangulo">
+            <img class="mediana" src="img/Rectangle1.png">
+    </section>
+
+    <section id="rectangulo">
+            <img class="muñeco" src="img/muñeco.png">
+    </section>
+
+    <section id="mensaje">
+            <img class="mensaje" src="img/mensaje.png">
+    </section>
+</main>
+    <footer><p class="copy">&copy Copyright Castañeda - 2023.</p></footer>
+
+    
+
+    <script>
+        function saltar(){
+            document.write("<br>");
+        }
+
+        function imprimir(frase) {
+        document.write(frase);
+        saltar();
+    }
+
+    
+    function encriptar1(texto) {
+    let resultado = "";
+    // Itera sobre cada carácter del texto
+    for (let i = 0; i < texto.length; i++) {
+      // Obtiene el carácter actual
+      let caracter = texto[i];
+      // Reemplaza el carácter por su equivalente encriptado
+      if (caracter == 'a') {
+        caracter = 'ai';
+      } if (caracter == 'e') {
+        caracter = 'enter';
+      }
+      if (caracter == 'i') {
+        caracter = 'imes';
+      } if (caracter == 'o') {
+        caracter = 'ober';
+      } else if (caracter == 'u') {
+        caracter = 'ufat';
+      }
+      
+       // ...
+      // Agrega el carácter encriptado al resultado
+      resultado += caracter;
+    }
+    // Devuelve el texto encriptado
+    return resultado;
+    
+  }
+
+  function desencriptar1(texto_encript) {
+    // Crear una tabla de sustitución inversa
+    var substitutionTable = {
+    "enter": "e",
+    "imes": "i",
+    "ai": "a",
+    "ober": "o",
+    "ufat": "u"
+  };
+    var texto_desencript = "";
+    for (var i = 0; i < texto_encript.length; i++) {
+    var palabraActual = texto_encript.substring(i, i+5);
+    if (substitutionTable[palabraActual]) {
+      texto_desencript += substitutionTable[palabraActual];
+      i += 4;
+    } else {
+      palabraActual = texto_encript.substring(i, i+4);
+      if (substitutionTable[palabraActual]) {
+        texto_desencript += substitutionTable[palabraActual];
+        i += 3;
+      } else {
+        palabraActual = texto_encript.substring(i, i+3);
+        if (substitutionTable[palabraActual]) {
+          texto_desencript += substitutionTable[palabraActual];
+          i += 2;
+        } else {
+          palabraActual = texto_encript.substring(i, i+2);
+          if (substitutionTable[palabraActual]) {
+            texto_desencript += substitutionTable[palabraActual];
+            i += 1;
+          } else {
+            texto_desencript += texto_encript[i];
+        }
+      }
+    }
+  }
+}
+  return texto_desencript;
+}
+
+
+  function encriptar() {
+      // Obtenemos el valor ingresado en el campo de texto
+      var texto_normal = document.getElementById("texto1").value;
+      
+      
+      // Encriptamos el texto usando nuestra funcion creada
+      var texto_encriptado = encriptar1(texto_normal);
+      
+      
+      
+      // Mostramos el texto encriptado en la página
+      
+      document.getElementById("mensaje").style.display = "none";
+      document.getElementById("result").innerHTML = texto_encriptado;
+      document.getElementById("texto1").value = "";
+      document.getElementById("texto1").focus();
+      
+      
+      
+    }
+
+    function desencriptar() {
+      // Obtenemos el valor ingresado en el campo de texto
+      var texto_normal = document.getElementById("texto1").value;
+      
+      
+      // Encriptamos el texto usando AES
+      var texto_desencriptado = desencriptar1(texto_normal);
+      
+      
+      
+      // Mostramos el texto encriptado en la página
+      document.getElementById("mensaje").style.display = "none";
+      document.getElementById("result").innerHTML = texto_desencriptado;
+      document.getElementById("texto1").value = "";
+      document.getElementById("texto1").focus();
+      
+    }
+
+    
+    //script para copiar el rsultado del encriptador
+     var botoncopiar = document.getElementById("boton3");
+     botoncopiar.addEventListener("click", function(){
+     var textoAcopiar = document.getElementById("result").innerText;
+     navigator.clipboard.writeText(textoAcopiar);
+});
+
+    </script>
+
+
+</body>
+</html>
